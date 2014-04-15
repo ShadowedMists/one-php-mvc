@@ -16,7 +16,7 @@ index.php
 What Other Files are Included?
 ------------------------------
 
-Optionally, the user can can create a configuration file which is expected to contan a JSON object. When the Router is constructed, the user can pass in the file path for this configuration object, and it's properties will be added to the `Configuration` class.  
+Optionally, the user can can create a configuration file which is expected to contain a JSON object. When the Router is constructed, the user can pass in the file path for this configuration object, and it's properties will be added to the `Configuration` class.  
 
 This repository also contains sample projects for setting up one-php-mvc for a variety of uses.  
 
