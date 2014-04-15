@@ -32,3 +32,41 @@ How Should I Structure My Project?
     * _layout.php
 * config.json
 * index.php
+
+
+How Do I Setup My Webserver?
+----------------------------
+
+Same way as other PHP MVC framworks:  
+
+### Apache
+
+In your site-configurtaion file add the following:  
+
+    <Directory />
+        RewriteEngine On
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteRule .* index.php [QSA,L]
+    </Directory>
+
+## IIS
+
+In the Web.config add the following:  
+
+    ﻿<?xml version="1.0" encoding="UTF-8"?>
+    <configuration>
+        <system.webServer>
+            <directoryBrowse enabled="false" />
+            <rewrite>
+                <rules>
+                    <rule name="Rewrite Rule" stopProcessing="true">
+                        <match url="^(.*)$" ignoreCase="true" />
+                        <conditions>
+                            <add input="{REQUEST_FILENAME}" matchType="IsFile" ignoreCase="false" negate="true" />
+                        </conditions>
+                        <action type="Rewrite" url="index.php" appendQueryString="true" />
+                    </rule>
+                </rules>
+            </rewrite>
+        </system.webServer>
+    </configuration>
