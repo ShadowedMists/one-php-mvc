@@ -1,7 +1,7 @@
 <?php
 
 //https://github.com/ShadowedMists/one-php-mvc
-$router = new Router($_SERVER['REQUEST_URI']);
+$router = new Router($_SERVER['REQUEST_URI'], 'config.json');
 $router->run();
 
 /**
