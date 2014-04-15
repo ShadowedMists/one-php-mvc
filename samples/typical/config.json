@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "title": "one-php-mvc - Sample Site",
+    "author": "The Most Awesome Developer",
+    "description": "This is the one-php-mvc typical sample site. It's very customizable.",
+    "keywords": "one php mvc one-php-mvc",
+    "image": "Link to Site Image"
+  },
+  "db": {
+    "host": "localhost", 
+    "database": "database",
+    "username": "database_username",
+    "password": "database_password"
+  },
+  "default_language" : "en",
+  "languages": ["en"],
+  "includes": [],
+  "master_layout" : "views/_layout.php",
+  "debug": false
+}

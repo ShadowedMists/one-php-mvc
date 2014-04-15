@@ -1,0 +1,5 @@
+body {}
+.menu {list-style-type: none;font-size: 26px;font-weight: 700;margin: 0px;padding: 0px;}
+.menu li {display: inline-block;}
+.menu li a {text-decoration: none;}
+.menu li a:hover {text-decoration: underline;}
