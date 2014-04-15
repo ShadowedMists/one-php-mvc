@@ -74,11 +74,11 @@ In the Web.config add the following:
 Other Frequently Asked Questions
 --------------------------------
 
-* Using URL segments for file paths is a huge security flaw.  
+* **Using URL segments for file paths is a huge security flaw.**  
     That is not a question, and if you can prove it and I will change it.
-* The sample projects have the `index.php` file, controllers and views in the web directory. That's a security flaw. A user could run the file.  
+* **The sample projects have the `index.php` file, controllers and views in the web directory. That's a security flaw. A user could run the file.**  
     Again not a question. Then do not put code in the PHP files that isn't encapsulated in a class (seriously). If you really cannot live with it, you can configure the *one* PHP file to look in the previous directory.
-* Why does one-php-mvc do [insert feature]?  
+* **Why does one-php-mvc do [insert feature]?**  
     one-php-mvc is designed to be lightweight, fast, and efficient. So fast, that it can run on a Raspberry PI. Your WordPress site can't run on a Raspberry PI, can it?
-* Why does it not do [insert feature]?  
+* **Why does it not do [insert feature]?**  
     If you need a feature, it's just *one* PHP file. Developers have all the freedom to add their own features for use in their projects.
