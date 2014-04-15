@@ -79,13 +79,14 @@ For applications requiring language specific pages, language files for each supp
 
 * /lang/en.json
 
+
     {  
         "title": "one-php-mvc",  
         "tag_line": "Most Fastest-Bestest PHP Micro-Framework"  
     }
 
 
-Now in you view you can specify:
+Now in your view you can specify:
 
     <h1><?php echo $this->get_lang('title'); ?></h1>
     <p><?php echo $this->get_lang('title'); ?></p>
