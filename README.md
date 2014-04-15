@@ -79,10 +79,11 @@ For applications requiring language specific pages, language files for each supp
 
 * /lang/en.json
 
-    {
-        "title": "one-php-mvc",
-        "tag_line": "Most Fastest-Bestest PHP Micro-Framework"
+    {  
+        "title": "one-php-mvc",  
+        "tag_line": "Most Fastest-Bestest PHP Micro-Framework"  
     }
+
 
 Now in you view you can specify:
 
