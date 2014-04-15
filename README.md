@@ -26,6 +26,7 @@ How Should I Structure My Project?
 * /controllers
     * home.php
 * /includes
+* /lang
 * /views
     * /home
         * index.php
@@ -70,6 +71,26 @@ In the Web.config add the following:
             </rewrite>
         </system.webServer>
     </configuration>
+
+Internationalization / Localization
+-----------------------------------
+
+For applications requiring language specific pages, language files for each supported language can be created. For example, create the following file:
+
+* /lang/en.json
+
+    {
+        "title": "one-php-mvc",
+        "tag_line": "Most Fastest-Bestest PHP Micro-Framework"
+    }
+
+Now in you view you can specify:
+
+    <h1><?php echo $this->get_lang('title'); ?></h1>
+    <p><?php echo $this->get_lang('title'); ?></p>
+
+For additional languages, simply add the language file to the `/lang` directory, e.g. `/lang/fr.json` and add the text `fr` to the `languages` array in the configuration. When using links, route the url with the `Controller`'s `route_url` function and the language will automatically be prepended to the URL.
+
 
 Other Frequently Asked Questions
 --------------------------------
