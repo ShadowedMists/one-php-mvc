@@ -89,7 +89,7 @@ For applications requiring language specific pages, language files for each supp
 Now in your view you can specify:
 
     <h1><?php echo $this->get_lang('title'); ?></h1>
-    <p><?php echo $this->get_lang('title'); ?></p>
+    <p><?php echo $this->get_lang('tag_line'); ?></p>
 
 For additional languages, simply add the language file to the `/lang` directory, e.g. `/lang/fr.json` and add the text `fr` to the `languages` array in the configuration. When using links, route the url with the `Controller`'s `route_url` function and the language will automatically be prepended to the URL.
 
