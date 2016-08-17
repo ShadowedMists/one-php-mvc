@@ -13,24 +13,27 @@
         <meta property="og:image" content="<?php echo $this->meta->image; ?>" />
         <meta name="twitter:title" content="<?php echo $this->meta->title; ?>">
         <meta name="twitter:image" content="<?php echo $this->meta->image; ?>">
-        <link rel="stylesheet" type="text/css" href="/css/site.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->content_url("/css/bootstrap.min.css"); ?>" />
         <?php $this->render_styles(); ?>
+        <script type="text/javascript" src="<?php echo $this->content_url("/js/bootstrap.min.js"); ?>" ></script>
         <?php $this->render_scripts(); ?>
     </head>
     <body>
-        <header>
-            <nav>
-                <ul class="menu">
-                    <li><a href="<?php echo $this->route_url('index', 'home'); ?>">Home</a></li>
-                    <li><a href="<?php echo $this->route_url('index', 'about'); ?>">About</a></li>
+        <header class="container" style="margin-top: 1rem">
+            <nav class="navbar navbar-light bg-faded">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item"><a href="<?php echo $this->route_url('index', 'home'); ?>" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="<?php echo $this->route_url('index', 'about'); ?>" class="nav-link">About</a></li>
                 </ul>
             </nav>
         </header>
-
-        <?php $this->render_body(); ?>
-
-        <footer>
-            &copy; 2013 - <?php echo date('Y'); ?> one-php-mvc
+        
+        <div class="container" style="margin-top: 1rem">
+            <?php $this->render_body(); ?>
+        </div>
+            
+        <footer class="container">
+            <p>&copy; 2013 - <?php echo date('Y'); ?> one-php-mvc</p>
         </footer>
     </body>
 </html>
