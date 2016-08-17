@@ -91,6 +91,10 @@ class Router {
 
         // parse meaningful segments from requested url
         $url = strtolower(trim(parse_url($route, PHP_URL_PATH), '/'));
+        if(!is_null($this->config->virtual_application_name) && strripos($url, $this->config->virtual_application_name) == 0) {
+            $l = strlen($this->config->virtual_application_name);
+            $url = substr($url, $l + 1, strlen($url) - $l - 1);
+        }
         $segments = explode('/', $url);
         $controller = NULL;
         $action = NULL;
@@ -136,7 +140,7 @@ class Router {
                 include $inc;
             }
         }
-
+        
         // assume the requested controller exists for the given file path
         $fp = 'controllers/' . $this->controller . '.php';
         if(!file_exists($fp)) {
@@ -366,6 +370,13 @@ class Controller {
      */
     public function route_url($action = NULL, $controller = NULL, $params = array(), $lang = NULL) {
         $segments = array();
+        
+        // add application name
+        if(!empty($this->config->virtual_application_name)) {
+            $segments[] = $this->config->virtual_application_name;
+        }
+        
+        // check if language was requested
         if(empty($lang)) {
             $lang = $this->request->lang;
         }
@@ -486,6 +497,27 @@ class Controller {
             return NULL;
         }
         return $this->lang->$key;
+    }
+    
+    /**
+     * Attempts to render a URL using the virtual application name, if provided.
+     * 
+     * @param string    the URL for content request
+     * @return string   the formatted URL with optional virtual application name
+     */
+    public function content_url($url) {
+        if(is_null($url))
+            return null;
+        
+        if(substr($url, 0, 1) != '/') {
+            $url = '/' . $url;
+        }
+        
+        if(empty($this->config->virtual_application_name)) {
+            return $url;
+        }
+        
+        return '/' . $this->config->virtual_application_name . $url;
     }
 }
 
