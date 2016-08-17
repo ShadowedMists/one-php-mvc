@@ -16,5 +16,6 @@
   "languages": ["en"],
   "includes": [],
   "master_layout" : "views/_layout.php",
+  "virtual_application_name": null,
   "debug": false
 }
